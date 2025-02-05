@@ -1,1 +1,36 @@
+chaos -d domain_name.com -o chaos.txt
+sublist3r -d domain_name.com -o sublist3r.txt
+assetfinder --subs-only domain_name.com > assetfinder.txt
+subfinder -d domain_name.com -o subfinder.txt
+amass enum -passive -d domain_name.com -o amass.txt
+
+cat chaos.txt sublist3r.txt assetfinder.txt subfinder.txt amass.txt | sort -u > all_subdomains.txt
+
+
+Validate sub-domain with DNS Resolution(dnsx):-
+cat all_subdomains.txt | dnsx -silent -o resolved_subdomains.txt
+
+Check for live web server(httpx):-
+cat resolved_subdomains.txt | httpx -silent -o live_websites.txt
+
+Automate the entire Process:-
+(chaos -d domain_name.com -o chaos.txt && sublist3r -d domain_name.com -o sublist3r.txt && assetfinder --subs-only domain_name.com > assetfinder.txt && subfinder -d domain_name.com -o subfinder.txt && amass enum -passive -d domain_name.com -o amass.txt) && cat chaos.txt sublist3r.txt assetfinder.txt subfinder.txt amass.txt | sort -u > all_subdomains.txt && cat all_subdomains.txt | dnsx -silent -o resolved_subdomains.txt && cat resolved_subdomains.txt | httpx -silent -o live_websites.txt
+
+
+Chaos+ffuf combination(additional sub domain bruteforcing):-
+cat chaos.txt | ffuf -u http://FUZZ.domain_name.com -w - -mc 200,301,302 -o ffuf_chaos.txt
+
+we can also use shodan.io,crt.sh,fufa,github,google to collect sub-domain.
+
+
+INFOMATION ABOUT TOOLS:-
+chaos->passive enumeration(bug bounty data)
+sublist3r-> Google,Bing and others search engines
+Assetfinder-> ASN-based enumeration
+Subfinder-> Multiple passive sources
+Amass-> DNS-based and API-based passive recon
+dnsx-> Resolving valid subdomains
+httpx->Checking live websites
+ffuf ->Brute-force hidden subdomains
+
 
