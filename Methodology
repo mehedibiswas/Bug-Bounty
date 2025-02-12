@@ -38,6 +38,10 @@ gf sqli >sql.txt; sqlmap -m sql.txt --batch --dbs --risk 2
     -> cat jsfiles.txt | jsceret
 [see the github documentation]
 
+16. Misconfiguration check of api using nuclei:
+    -> nuclei -t http/misconfiguration/ -var apikey="YOUR_API_KEY"
+
+
 [Bug Bounty Mathdlogy by Muhammad Waseem]
 
 ******** ssrfmap 
