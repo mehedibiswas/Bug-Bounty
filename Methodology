@@ -45,3 +45,5 @@ gf sqli >sql.txt; sqlmap -m sql.txt --batch --dbs --risk 2
 [Bug Bounty Mathdlogy by Muhammad Waseem]
 
 ******** ssrfmap 
+17.Another Interesting tool is "sudomy" available in github:
+usage: ./sudomy -d ab-inbev.com -dP -eP -rS -cF -pS -tO -gW  
