@@ -3,6 +3,8 @@ sublist3r -d domain_name.com -o sublist3r.txt
 assetfinder --subs-only domain_name.com > assetfinder.txt
 subfinder -d domain_name.com -o subfinder.txt
 amass enum -passive -d domain_name.com -o amass.txt
+amass enum -passive -d domain_name.com -o - | awk '{print $1}' > amass.txt  [only get subdomain ignoring additional info]
+
 
 cat chaos.txt sublist3r.txt assetfinder.txt subfinder.txt amass.txt | sort -u > all_subdomains.txt
 
