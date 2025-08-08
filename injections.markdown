@@ -1,10 +1,10 @@
-where to test:
+### where to test
 
   Header
   Query string parameters
   Parameters in POST/PUT requests
   
-How to test:
+### How to test
 
   When reviewing API documentation, if the API is expecting a certain type of input (number, string, boolean value) send:
 
